@@ -38,3 +38,5 @@ C:\Users\wilso\Desktop\Periodo 2021 c2 eduar\tec de internet\CRUDASP\CRUDASP\obj
 C:\Users\wilso\Desktop\Periodo 2021 c2 eduar\tec de internet\CRUDASP\CRUDASP\obj\Debug\net5.0\CRUDASP.pdb
 C:\Users\wilso\Desktop\Periodo 2021 c2 eduar\tec de internet\CRUDASP\CRUDASP\obj\Debug\net5.0\CRUDASP.genruntimeconfig.cache
 C:\Users\wilso\Desktop\Periodo 2021 c2 eduar\tec de internet\CRUDASP\CRUDASP\obj\Debug\net5.0\CRUDASP.csproj.CopyComplete
+C:\Users\wilso\Desktop\Periodo 2021 c2 eduar\tec de internet\CRUDASP\CRUDASP\bin\Debug\net5.0\Dapper.dll
+C:\Users\wilso\Desktop\Periodo 2021 c2 eduar\tec de internet\CRUDASP\CRUDASP\obj\Debug\net5.0\Razor\Pages\Inicio.cshtml.g.cs
