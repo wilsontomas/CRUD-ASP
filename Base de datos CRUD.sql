@@ -61,13 +61,13 @@ end
 create procedure ObtenerPersonas
 as begin
 set nocount on;
-select p.PersonAId,p.Nombre, p.Apellido, pr.NombreProvincia, pr.ProvinciaId  from Personas
+select p.PersonAId,p.Nombre, p.Apellido, pr.NombreProvincia  from Personas
  p inner join Provincia pr on p.IdProvincia= pr.ProvinciaId 
 end
 
 create procedure ObtenerProvincias
 as begin
-select * from Provincia
+select p.ProvinciaId, p.NombreProvincia from Provincia p
 end
 
 create procedure ObtenerPersonaPorId
