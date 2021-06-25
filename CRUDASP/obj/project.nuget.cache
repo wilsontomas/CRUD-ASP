@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "quS/ZxHPIB42iwn3xNVuDeOVqDT/v1Yy02WzekYDsAv/upFH7gcVjrIb5bYCOEyrKL/tnL+CBqvWEX1xPgDE4w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\wilso\\Desktop\\Periodo 2021 c2 eduar\\tec de internet\\CRUDASP\\CRUDASP\\CRUDASP.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\wilso\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512"
+  ],
+  "logs": []
+}
