@@ -36,7 +36,7 @@ namespace CRUDASP.Pages
         }
 
 
-        public void OnPost(Persona persona) 
+        public void OnPostAgregar(Persona persona) 
         {
             //Insertamos la nueva persona
             var parametros = new { @nombre=persona.Nombre, @apellido=persona.Apellido, @Idprovincia=persona.IdProvincia };
@@ -51,9 +51,17 @@ namespace CRUDASP.Pages
 
         }
 
-        public void Eliminar(int Eliminar) {
-            var prueba = "aa";
-            RedirectToAction("Index");
+        public void OnPostEliminar(int Eliminar) {
+            
+            var parametros = new { @IdPersona=Eliminar };
+            this.DB.Query("EliminarPersona", parametros, commandType: CommandType.StoredProcedure);
+
+            //cargamos la informacion de la base de datos
+            List<Provincia> listaProvincias = this.DB.Query<Provincia>("ObtenerProvincias", null, commandType: CommandType.StoredProcedure).ToList();
+            List<PersonaProvincia> listaPersonas = this.DB.Query<PersonaProvincia>("ObtenerPersonas", null, commandType: CommandType.StoredProcedure).ToList();
+
+            this.PersonasProvinciasDto.Provincias = listaProvincias;
+            this.PersonasProvinciasDto.Personas = listaPersonas;
         }
     }
 }

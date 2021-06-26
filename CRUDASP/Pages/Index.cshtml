@@ -3,8 +3,9 @@
 @{
     ViewData["Title"] = "Home page";
 }
-
-<form method="post">
+<br />
+<h3>Ventana principal</h3>
+<form method="post" asp-page-handler="Agregar">
     <div class="form-group">
         <label for="nombre">Nombre</label>
         <input type="text" class="form-control" required name="Nombre" id="nombre" placeholder="Nombre">
@@ -16,7 +17,8 @@
     <div class="form-group">
         <label for="provincia">Provincia</label>
         <select id="provincia" class="form-control" name="IdProvincia">
-            @foreach (var item in Model.PersonasProvinciasDto.Provincias) { 
+            @foreach (var item in Model.PersonasProvinciasDto.Provincias)
+            {
                 <option value="@item.ProvinciaId">@item.NombreProvincia</option>
             }
         </select>
@@ -39,24 +41,25 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.PersonasProvinciasDto.Personas) { 
-        <tr>
-            <td>@item.PersonAId</td>
-            <td>@item.Nombre</td>
-            <td>@item.Apellido</td>
-            <td>@item.NombreProvincia</td>
-            <td>
-                <form method="post" >
-                    <button type="submit" name="Borrar" value="@item.PersonAId" class="btn btn-danger">Eliminar</button>
-                </form>
-            </td>
-            <td>
-                <form>
-                    <button type="submit" name="Editar" value="@item.PersonAId" class="btn btn-info">Editar</button>
-                </form>
-            </td>
+        @foreach (var item in Model.PersonasProvinciasDto.Personas)
+        {
+            <tr>
+                <td>@item.PersonAId</td>
+                <td>@item.Nombre</td>
+                <td>@item.Apellido</td>
+                <td>@item.NombreProvincia</td>
+                <td>
+                    <form method="post" asp-page-handler="Eliminar">
+                        <button type="submit" name="Eliminar" value="@item.PersonAId" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="get" asp-page="Editar">
+                        <button type="submit" name="Editar" value="@item.PersonAId" class="btn btn-info">Editar</button>
+                    </form>
+                </td>
 
-        </tr>
+            </tr>
         }
     </tbody>
 

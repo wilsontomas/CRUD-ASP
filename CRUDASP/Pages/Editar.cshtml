@@ -1,0 +1,32 @@
+﻿@page
+@model CRUDASP.Pages.EditarModel
+@{
+}
+<br />
+<h3>Edicion de registros</h3>
+<form method="post" asp-page-handler="Editar">
+    <input type="number" hidden value="@Model.personaBuscada.PersonAId" name="PersonAId"  />
+    <div class="form-group">
+        <label for="Nombre">Nombre</label>
+        <input type="text" value="@Model.personaBuscada.Nombre" class="form-control" name="Nombre" id="Nombre"  placeholder="Nombre">
+    </div>
+    <div class="form-group">
+        <label for="Apellido">Apellido</label>
+        <input type="text" value="@Model.personaBuscada.Apellido" class="form-control" name="Apellido" id="Apellido" placeholder="Apellido">
+    </div>
+    <div class="form-group">
+        <label for="Provincia">Provincia</label>
+        <select id="Provincia" name="IdProvincia" class="form-control" >
+            @foreach (var item in Model.provincias) { 
+            <option value="@item.ProvinciaId">@item.NombreProvincia</option>
+            }
+            
+        </select>
+    </div>
+
+
+    <button type="submit"  class="btn btn-info">Editar</button>
+</form>
+<form method="get" asp-page="Index">
+    <button type="submit"  class="btn btn-danger">Cancelar</button>
+</form>
